@@ -1,20 +1,14 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from ui import View
+from ctrl import Control
+from PyQt5.QtWidgets import QApplication        
 
-
-class Calculator(QWidget):
-    
-    def __init__(self):
-        super().__init__()
-        self.initUI()
-        
-    def initUI(self):
-        self.setWindowTitle('Calculator')
-        self.resize(256, 256)
-        self.show()
-        
-        
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    view = Calculator()
+def main():
+    calc = QApplication(sys.argv)
+    app=QApplication(sys.argv)
+    view=View()
+    Control(view=view)
     sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    main()
